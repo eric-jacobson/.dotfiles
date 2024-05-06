@@ -39,11 +39,22 @@ set relativenumber
 imap jj <Esc>
 
 let mapleader = " "
+map <leader>dd :action Debug<CR>
+map <leader>cd :action ChooseDebugConfiguration<CR>
+map <leader>rr :action Run<CR>
+map <leader>cr :action ChooseRunConfiguration<CR>
 map <leader>a :action $SelectAll<CR>
 map <leader>b :action GotoDeclaration<CR>
 map <leader>c :action $Copy<CR>
 map <leader>d :action EditorDuplicate<CR>
 map <leader>e :action RecentFiles<CR>
 map <leader>f :action Find<CR>
+map <leader>i :action ImplementMethods<CR>
+map <leader>o :action OverrideMethods<CR>
+map <leader>p :action ParameterInfo<CR>
+map <leader>q :action QuickJavaDoc<CR>
+map <leader>r :action Replace<CR>
+map <leader>v :action $Paste<CR>
+map <leader>x :action $Cut<CR>
 map <leader>[ :action EditorCodeBlockStart<CR>
 map <leader>] :action EditorCodeBlockEnd<CR>
