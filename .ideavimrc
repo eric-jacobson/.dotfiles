@@ -1,4 +1,4 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+.ideavimrc is a configuration file for IdeaVim plugin. It uses
 "   the same commands as the original .vimrc configuration.
 " You can find a list of commands here: https://jb.gg/h38q75
 " Find more examples here: https://jb.gg/share-ideavimrc
@@ -6,37 +6,36 @@
 " Don't use Ex mode, use Q for formatting.
 map Q gq
 
-set number
 set relativenumber
 set incsearch
-set scrolloff=5
-
-imap jj <Esc>
+set scrolloff=10
 
 let mapleader = " "
 
+imap jj <Esc>
+
+nmap <A-h> <C-W>h
+nmap <A-j> <C-W>j
+nmap <A-k> <C-W>k
+nmap <A-l> <C-W>l
+
+nmap <leader>a :action $SelectAll<CR>
+nmap <leader>c :action $Copy<CR>
+nmap <leader>x :action $Cut<CR>
+
+nmap <leader>d :action EditorDuplicate<CR>
+nmap <leader>e :action RecentFiles<CR>
 nmap <leader>f :action ReformatCode<CR>
-nmap <leader>sf :action GotoFile<CR>
-nmap <leader>sn :action GotoClass<CR>
-nmap <leader>dd :action Debug<CR>
+nmap <leader>i :action ImplementMethods<CR>
+nmap <leader>o :action OverrideMethods<CR>
+nmap <leader>p :action ParameterInfo<CR>
+nmap <leader>pf :action GotoClass<CR>
+nmap gI :action GotoImplementation<CR>
+
+nmap <leader>rd :action Debug<CR>
 nmap <leader>cd :action ChooseDebugConfiguration<CR>
 nmap <leader>rr :action Run<CR>
 nmap <leader>cr :action ChooseRunConfiguration<CR>
-
-map <leader>a :action $SelectAll<CR>
-map <leader>b :action GotoDeclaration<CR>
-map <leader>c :action $Copy<CR>
-map <leader>d :action EditorDuplicate<CR>
-map <leader>e :action RecentFiles<CR>
-map <leader>i :action ImplementMethods<CR>
-map <leader>o :action OverrideMethods<CR>
-map <leader>p :action ParameterInfo<CR>
-map <leader>q :action QuickJavaDoc<CR>
-map <leader>r :action Replace<CR>
-map <leader>v :action $Paste<CR>
-map <leader>x :action $Cut<CR>
-map <leader>[ :action EditorCodeBlockStart<CR>
-map <leader>] :action EditorCodeBlockEnd<CR>
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
 
