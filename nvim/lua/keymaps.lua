@@ -20,3 +20,5 @@ map("n", "<C-Up>", "<cmd>resize +2<CR>")
 map("n", "<C-Down>", "<cmd>resize -2<CR>")
 map("n", "<C-Left>", "<cmd>vertical resize -2<CR>")
 map("n", "<C-Right>", "<cmd>vertical resize +2<CR>")
+
+map("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })

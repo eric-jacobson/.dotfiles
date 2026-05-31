@@ -29,6 +29,35 @@ require("lazy").setup({
 		dependencies = {
 			"nvim-tree/nvim-web-devicons",
 		},
+		opts = {},
+	},
+	-- treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		build = ":TSUpdate",
+		branch = "main",
+		config = function()
+			local ensure_installed = {
+				"javascript",
+				"typescript",
+				"tsx",
+				"go",
+				"html",
+				"templ",
+				"json",
+				"yaml",
+				"toml",
+				"css",
+			}
+			local group = vim.api.nvim_create_augroup("TreeSitterSetup", { clear = true })
+			vim.api.nvim_create_autocmd("FileType", {
+				group = group,
+				pattern = ensure_installed,
+				callback = function(args)
+					vim.treesitter.start(args.buf)
+				end,
+			})
+		end,
 	},
 	-- telescope
 	{
@@ -53,14 +82,6 @@ require("lazy").setup({
 						require("telescope.themes").get_dropdown(),
 					},
 				},
-				-- defaults = {
-				-- 	mappings = {
-				-- 		i = {
-				-- 			["<C-n>"] = "move_selection_next",
-				-- 			["<C-p>"] = "move_selection_previous",
-				-- 		},
-				-- 	},
-				-- },
 			})
 
 			pcall(telescope.load_extension, "fzf")
@@ -105,6 +126,7 @@ require("lazy").setup({
 				"pyright",
 				"html",
 				"htmx",
+				"templ",
 			}
 			local tools = {
 				"stylua",
