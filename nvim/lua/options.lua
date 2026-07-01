@@ -12,6 +12,7 @@ vim.opt.timeoutlen = 300
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.hlsearch = true
+vim.opt.winborder = "rounded"
 vim.cmd("syntax on")
 
 vim.schedule(function()

@@ -20,6 +20,12 @@ require("lazy").setup({
 		"folke/tokyonight.nvim",
 		priority = 1000,
 		config = function()
+			require("tokyonight").setup({
+				transparent = true,
+				styles = {
+					floats = "transparent",
+				},
+			})
 			vim.cmd.colorscheme("tokyonight-night")
 		end,
 	},
@@ -48,6 +54,7 @@ require("lazy").setup({
 				"yaml",
 				"toml",
 				"css",
+				"odin",
 			}
 			local group = vim.api.nvim_create_augroup("TreeSitterSetup", { clear = true })
 			vim.api.nvim_create_autocmd("FileType", {
@@ -127,6 +134,7 @@ require("lazy").setup({
 				"html",
 				"htmx",
 				"templ",
+				"ols",
 			}
 			local tools = {
 				"stylua",
