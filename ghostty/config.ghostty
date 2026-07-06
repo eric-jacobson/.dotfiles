@@ -1,2 +1,4 @@
 theme=TokyoNight
-background-opacity=0.90
+background-opacity=0.95
+window-height=50
+window-width=180
