@@ -2,3 +2,7 @@ theme=TokyoNight
 background-opacity=0.95
 window-height=50
 window-width=180
+split-inherit-working-directory = true
+window-inherit-working-directory = false
+tab-inherit-working-directory = false
+working-directory = home
